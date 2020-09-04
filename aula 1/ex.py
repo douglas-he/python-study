@@ -29,11 +29,16 @@ def media(lista):
 
 
 def imprime_asterisco(inteiro):
-    aux = 0
-    while aux < inteiro:
-        print("*" * inteiro)
-        aux += 1
-    return ""
+    
+    def repeat(int):
+        if inteiro <= 0:
+            return "*\n"
+        print(inteiro)
+        return "*" + imprime_asterisco((inteiro - 1))
+
+    if inteiro == 0:
+        return repeat()
+    return imprime_asterisco(inteiro)
 
 
 def imprime_semi_piramide(inteiro):
@@ -64,18 +69,18 @@ def tinta_total(parede):
 def triagulo_valido(lado1, lado2, lado3):
     conjunto = set([lado1, lado2, lado3])
     if len(conjunto) == 1:
-        return 'Triângulo Equilátero: três lados iguais;'
+        return "Triângulo Equilátero: três lados iguais;"
     elif len(conjunto) == 2:
-        return 'Triângulo Isósceles: quaisquer dois lados iguais;'
-    return 'Triângulo Escaleno: três lados diferentes.'
+        return "Triângulo Isósceles: quaisquer dois lados iguais;"
+    return "Triângulo Escaleno: três lados diferentes."
 
 
-print(maior_num(1, 2))
-print(menor_num(list_numbers))
-print(media(list_numbers))
-print(imprime_asterisco(2))
-print(imprime_semi_piramide(4))
-print(maior_nome(list_names))
-print(soma_inteiros(5))
-print(tinta_total(100))
-print(triagulo_valido(1, 1, 1))
+# print(maior_num(1, 2))
+# print(menor_num(list_numbers))
+# print(media(list_numbers))
+print(imprime_asterisco(4))
+# print(imprime_semi_piramide(4))
+# print(maior_nome(list_names))
+# print(soma_inteiros(5))
+# print(tinta_total(100))
+# print(triagulo_valido(1, 1, 1))
